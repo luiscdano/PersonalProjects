@@ -6,11 +6,18 @@ const btnClear = document.getElementById("btnClear");
 const qrCanvas = document.getElementById("qrCanvas");
 const btnDownload = document.getElementById("btnDownload");
 const statusEl = document.getElementById("status");
+const fileNameInput = document.getElementById("fileName");
 document.getElementById("year").textContent = new Date().getFullYear();
 
 function setStatus(msg, ok = true) {
   statusEl.textContent = msg;
   statusEl.style.color = ok ? "var(--muted)" : "#ff6b6b";
+}
+
+function buildFileName() {
+  const raw = fileNameInput.value.trim().replace(/\.png$/i, "");
+  const cleaned = raw.replace(/[<>:"/\\|?*\x00-\x1F]/g, "").trim();
+  return cleaned || "qr";
 }
 
 function enableDownload(enabled) {
@@ -47,7 +54,7 @@ async function generate() {
     // Crear enlace de descarga
     const dataUrl = qrCanvas.toDataURL("image/png");
     btnDownload.href = dataUrl;
-    btnDownload.download = "qr.png";
+    btnDownload.download = `${buildFileName()}.png`;
 
     setStatus("QR generado correctamente. Puedes descargarlo en PNG.");
     enableDownload(true);
