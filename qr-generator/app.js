@@ -67,6 +67,7 @@ async function generate() {
 
 function clearAll() {
   inputText.value = "";
+  fileNameInput.value = "";
   const ctx = qrCanvas.getContext("2d");
   ctx.clearRect(0, 0, qrCanvas.width, qrCanvas.height);
   setStatus("Escribe un enlace y pulsa “Generar”.");
