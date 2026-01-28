@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Generator | PersonalProjects</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="header">
+        <h1>Generador de Código QR</h1>
+        <p>Crea un QR desde cualquier enlace o texto y descárgalo en PNG.</p>
+      </header>
+
+      <section class="card">
+        <label class="label" for="inputText">Enlace o texto</label>
+        <input
+          id="inputText"
+          class="input"
+          type="text"
+          placeholder="Pega aquí un link (Drive, YouTube, etc.)"
+          autocomplete="off"
+        />
+
+        <div class="row">
+          <div class="field">
+            <label class="label" for="size">Tamaño</label>
+            <select id="size" class="select">
+              <option value="256">256 px</option>
+              <option value="384" selected>384 px</option>
+              <option value="512">512 px</option>
+              <option value="768">768 px</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label" for="ecc">Corrección</label>
+            <select id="ecc" class="select">
+              <option value="L">L (baja)</option>
+              <option value="M" selected>M (media)</option>
+              <option value="Q">Q (alta)</option>
+              <option value="H">H (máxima)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btnGenerate" class="btn primary">Generar</button>
+          <button id="btnClear" class="btn">Limpiar</button>
+        </div>
+
+        <div class="result">
+          <div class="qrBox">
+            <canvas id="qrCanvas" width="384" height="384"></canvas>
+          </div>
+
+          <div class="meta">
+            <p id="status" class="status">Escribe un enlace y pulsa “Generar”.</p>
+            <a id="btnDownload" class="btn download disabled" href="#" download="qr.png">Descargar PNG</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>© <span id="year"></span> PersonalProjects • Hecho por Luis Emilio Cedano</small>
+      </footer>
+    </main>
+
+    <!-- Librería ligera (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

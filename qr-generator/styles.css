@@ -1,0 +1,90 @@
+:root{
+  --bg:#0b0f14;
+  --card:#121a24;
+  --text:#c9d4e5;
+  --muted:#93a4ba;
+  --aqua:#00f5ff;
+  --border: rgba(0,245,255,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(0,245,255,.12), transparent 60%),
+              radial-gradient(900px 400px at 90% 20%, rgba(0,245,255,.08), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 16px}
+.header h1{
+  margin:0 0 6px 0;
+  color:var(--aqua);
+  letter-spacing:.4px;
+  text-shadow: 0 0 14px rgba(0,245,255,.35);
+}
+.header p{margin:0 0 18px 0;color:var(--muted)}
+
+.card{
+  background: rgba(18,26,36,.92);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+
+.label{display:block;font-size:.92rem;color:var(--muted);margin:10px 0 6px}
+.input, .select{
+  width:100%;
+  background: rgba(11,15,20,.7);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--text);
+  padding:12px 12px;
+  border-radius:12px;
+  outline:none;
+}
+.input:focus,.select:focus{border-color: rgba(0,245,255,.55)}
+
+.row{display:flex;gap:12px;margin-top:10px}
+.field{flex:1}
+
+.actions{display:flex;gap:10px;margin-top:14px}
+.btn{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(11,15,20,.65);
+  color: var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:120px;
+}
+.btn.primary{
+  border-color: rgba(0,245,255,.65);
+  color: var(--aqua);
+  box-shadow: 0 0 0 0 rgba(0,245,255,.2);
+}
+.btn.primary:hover{box-shadow: 0 0 18px rgba(0,245,255,.18)}
+.btn.download{margin-top:6px}
+.btn.disabled{opacity:.45;pointer-events:none}
+
+.result{
+  margin-top:16px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.qrBox{
+  background: #ffffff;
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(0,245,255,.35);
+}
+.status{margin:0;color:var(--muted)}
+.meta{min-width:260px}
+.footer{margin-top:16px;color:var(--muted)}
