@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="titleCorales descCorales">
+  <title id="titleCorales">Placeholder rojo Los Corales</title>
+  <desc id="descCorales">Textura tipo brocha roja para representar la sucursal Los Corales.</desc>
+  <path d="M130 175 C365 95, 630 105, 1040 170" fill="none" stroke="#DA192D" stroke-width="108" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  <path d="M80 300 C360 220, 705 245, 1090 315" fill="none" stroke="#D01227" stroke-width="122" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
+  <path d="M95 430 C350 352, 700 380, 1025 450" fill="none" stroke="#DE2033" stroke-width="111" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
+  <path d="M180 548 C420 495, 760 524, 1000 582" fill="none" stroke="#C40E22" stroke-width="90" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+</svg>

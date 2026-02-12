@@ -2,6 +2,9 @@
   --blue-900: #022f8c;
   --blue-700: #0054c7;
   --blue-500: #2576e2;
+  --village-500: #0054c7;
+  --downtown-500: #e0a400;
+  --corales-500: #d91e2f;
   --red-600: #dc1b2f;
   --red-500: #ff3342;
   --gold-400: #ffd24b;
@@ -263,16 +266,26 @@ nav {
   width: 100%;
   height: 180px;
   border-radius: var(--radius-lg);
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(9, 51, 134, 0.1);
+  padding: 0.45rem;
   box-shadow: 0 20px 42px rgba(2, 47, 140, 0.25);
 }
 
-.floating-card.right img {
-  filter: saturate(1.08) hue-rotate(6deg);
+.floating-card.is-village {
+  border-color: rgba(0, 84, 199, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(235, 244, 255, 0.92));
 }
 
-.floating-card:nth-child(3) img {
-  filter: saturate(1.15) hue-rotate(-6deg);
+.floating-card.is-downtown {
+  border-color: rgba(224, 164, 0, 0.34);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(255, 250, 225, 0.94));
+}
+
+.floating-card.is-corales {
+  border-color: rgba(217, 30, 47, 0.3);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 238, 241, 0.93));
 }
 
 .floating-content a {
@@ -282,6 +295,18 @@ nav {
   color: var(--blue-900);
   line-height: 1.1;
   transition: color 0.2s ease;
+}
+
+.floating-card.is-village .floating-content a {
+  color: #0046ad;
+}
+
+.floating-card.is-downtown .floating-content a {
+  color: #906700;
+}
+
+.floating-card.is-corales .floating-content a {
+  color: #b01526;
 }
 
 .floating-content a:hover {
@@ -295,6 +320,12 @@ nav {
 }
 
 .module-section {
+  --local-primary: var(--red-600);
+  --local-primary-strong: var(--red-500);
+  --local-soft: rgba(220, 27, 47, 0.1);
+  --local-border: rgba(220, 27, 47, 0.26);
+  --local-link-text: #fff;
+  --local-shadow: rgba(220, 27, 47, 0.24);
   border-top: 1px solid rgba(2, 47, 140, 0.08);
 }
 
@@ -303,13 +334,40 @@ nav {
   background: rgba(255, 255, 255, 0.42);
 }
 
+.module-section.local-village {
+  --local-primary: var(--village-500);
+  --local-primary-strong: #003f9d;
+  --local-soft: rgba(0, 84, 199, 0.12);
+  --local-border: rgba(0, 84, 199, 0.32);
+  --local-link-text: #fff;
+  --local-shadow: rgba(0, 84, 199, 0.26);
+}
+
+.module-section.local-downtown {
+  --local-primary: var(--downtown-500);
+  --local-primary-strong: #bb8500;
+  --local-soft: rgba(224, 164, 0, 0.16);
+  --local-border: rgba(204, 151, 0, 0.36);
+  --local-link-text: #3d2b00;
+  --local-shadow: rgba(184, 126, 0, 0.22);
+}
+
+.module-section.local-corales {
+  --local-primary: var(--corales-500);
+  --local-primary-strong: #b01526;
+  --local-soft: rgba(217, 30, 47, 0.12);
+  --local-border: rgba(217, 30, 47, 0.31);
+  --local-link-text: #fff;
+  --local-shadow: rgba(176, 21, 38, 0.24);
+}
+
 .module-head {
   max-width: 76ch;
 }
 
 .module-tag {
   margin: 0;
-  color: var(--red-600);
+  color: var(--local-primary, var(--red-600));
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 800;
@@ -339,16 +397,16 @@ nav {
 }
 
 .module-card {
-  border: 1px solid var(--line);
+  border: 1px solid var(--local-border);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), var(--local-soft));
   padding: 1rem;
   box-shadow: 0 16px 36px rgba(5, 53, 134, 0.1);
 }
 
 .module-card h3 {
   margin: 0;
-  color: var(--blue-900);
+  color: var(--local-primary-strong);
   font-size: 1.05rem;
 }
 
@@ -357,17 +415,28 @@ nav {
   color: var(--ink-700);
 }
 
+.local-swatch {
+  width: 100%;
+  max-width: 340px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(9, 51, 134, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.32rem;
+  margin-bottom: 0.65rem;
+}
+
 .module-link {
   margin-top: 0.85rem;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   font-weight: 800;
-  color: #fff;
-  background: linear-gradient(120deg, var(--red-600), var(--red-500));
+  color: var(--local-link-text);
+  background: linear-gradient(120deg, var(--local-primary-strong), var(--local-primary));
   border-radius: 999px;
   padding: 0.6rem 0.95rem;
-  box-shadow: 0 15px 35px rgba(220, 27, 47, 0.28);
+  box-shadow: 0 15px 35px var(--local-shadow);
 }
 
 .about-section .container {

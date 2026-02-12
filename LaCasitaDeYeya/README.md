@@ -16,8 +16,13 @@ Primera fase de la propuesta: estructura seccionada y escalable con navegación 
   - La Casita de Yeya Village
   - La Casita de Yeya Downtown
   - La Casita de Yeya Los Corales
+- Placeholder por color aplicado por local:
+  - Azul: Village
+  - Amarillo: Downtown
+  - Rojo: Los Corales
 - Cada tarjeta enlaza a su sección correspondiente.
 - Secciones base separadas para cada local y para Nosotros.
+- Carpeta lista para reemplazo de imágenes reales: `assets/locales/`.
 
 ## Enlaces de ubicaciones (Google)
 - Village: `https://share.google/HPCH2DRd57vGc7hVA`
@@ -33,4 +38,3 @@ Abrir: `http://localhost:8080`
 ## Publicación (GitHub Pages)
 Ruta esperada:
 - `https://luiscdano.github.io/PersonalProjects/LaCasitaDeYeya/`
-
