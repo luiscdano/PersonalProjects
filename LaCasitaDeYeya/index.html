@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="La Casita de Yeya: propuesta web modular con secciones para Home, Village, Downtown, Los Corales y Nosotros."
+      content="La Casita de Yeya: Home con resumen general y acceso modular a Village, Downtown, Los Corales y Nosotros."
     />
     <meta name="theme-color" content="#004bb8" />
-    <title>La Casita de Yeya | Web Modular</title>
+    <title>La Casita de Yeya | Home</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,13 +20,13 @@
     <link rel="apple-touch-icon" href="assets/icon-192.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
     <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
 
     <header class="topbar" id="top">
       <div class="container topbar-inner">
-        <a href="#home" class="brand" aria-label="Ir a Home">
+        <a href="index.html" class="brand" aria-label="Ir a Home">
           <img src="assets/avatar-yeya.jpg" alt="Logo de La Casita de Yeya" />
           <div>
             <span>La Casita de</span>
@@ -37,25 +37,24 @@
         <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">Menu</button>
 
         <nav id="main-nav" aria-label="Navegación principal">
-          <a href="#home" class="nav-link is-active">Home</a>
-          <a href="#village" class="nav-link">Village</a>
-          <a href="#downtown" class="nav-link">Downtown</a>
-          <a href="#los-corales" class="nav-link">Los Corales</a>
-          <a href="#nosotros" class="nav-link">Nosotros</a>
+          <a href="index.html" class="nav-link is-active">Home</a>
+          <a href="village.html" class="nav-link">Village</a>
+          <a href="downtown.html" class="nav-link">Downtown</a>
+          <a href="los-corales.html" class="nav-link">Los Corales</a>
+          <a href="nosotros.html" class="nav-link">Nosotros</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="home" class="section home-section">
+      <section class="section home-section">
         <div class="container">
           <div class="home-header reveal" style="--delay: 0.04s">
             <p class="kicker">Cocina típica dominicana con casi 15 años de historia</p>
-            <h1>Una marca local sólida que merece una presencia digital a su nivel</h1>
+            <h1>Home de resumen general de la marca</h1>
             <p>
-              La Casita de Yeya nació como una propuesta de comida criolla auténtica y se ha convertido en un punto
-              de referencia para locales y visitantes en Punta Cana. Esta web modular organiza cada sucursal como una
-              experiencia propia, manteniendo una sola identidad de marca.
+              La Casita de Yeya nació como una propuesta de comida criolla auténtica y hoy cuenta con tres locales en
+              Punta Cana. Este Home resume la marca y te dirige a páginas individuales para cada sucursal.
             </p>
           </div>
 
@@ -63,113 +62,63 @@
             <article class="floating-card left is-village reveal" style="--delay: 0.1s">
               <img src="assets/locales/village-brush.svg" alt="Placeholder azul para La Casita de Yeya Village" />
               <div class="floating-content">
-                <a href="#village">La Casita de Yeya Village</a>
-                <p>Primera parada destacada, ideal para clientes de la zona Village.</p>
+                <a href="village.html">La Casita de Yeya Village</a>
+                <p>Página dedicada para todo lo relacionado a Village.</p>
               </div>
             </article>
 
             <article class="floating-card right is-downtown reveal" style="--delay: 0.2s">
               <img src="assets/locales/downtown-brush.svg" alt="Placeholder amarillo para La Casita de Yeya Downtown" />
               <div class="floating-content">
-                <a href="#downtown">La Casita de Yeya Downtown</a>
-                <p>Ubicación estratégica con alto flujo de visitantes y residentes.</p>
+                <a href="downtown.html">La Casita de Yeya Downtown</a>
+                <p>Página independiente para la sucursal Downtown.</p>
               </div>
             </article>
 
             <article class="floating-card left is-corales reveal" style="--delay: 0.3s">
               <img src="assets/locales/los-corales-brush.svg" alt="Placeholder rojo para La Casita de Yeya Los Corales" />
               <div class="floating-content">
-                <a href="#los-corales">La Casita de Yeya Los Corales</a>
-                <p>Punto clave para reforzar presencia en zona turística de playa.</p>
+                <a href="los-corales.html">La Casita de Yeya Los Corales</a>
+                <p>Página exclusiva para contenido de Los Corales.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="village" class="section module-section local-village">
+      <section class="section overview-section">
         <div class="container">
-          <div class="module-head reveal" style="--delay: 0.06s">
-            <p class="module-tag">Local 01</p>
-            <h2>La Casita de Yeya Village</h2>
-            <p>Sección dedicada al local Village. Aquí iremos colocando contenido específico de este punto.</p>
+          <div class="module-head reveal" style="--delay: 0.08s">
+            <p class="module-tag">Resumen</p>
+            <h2>Mapa rápido del sitio</h2>
+            <p>
+              Cada local tiene su propio enlace y estructura de contenidos para construir información detallada sin
+              mezclarlo todo en una sola página larga.
+            </p>
           </div>
 
-          <div class="module-grid">
-            <article class="module-card reveal" style="--delay: 0.12s">
-              <img class="local-swatch" src="assets/locales/village-brush.svg" alt="Placeholder azul Village" />
-              <h3>Resumen del local</h3>
-              <p>Ambiente familiar, menú criollo y enfoque en servicio rápido para residentes y visitantes.</p>
+          <div class="overview-grid">
+            <article class="overview-card reveal" style="--delay: 0.12s">
+              <h3>Village</h3>
+              <p>Detalles operativos, menú destacado y contenido específico de esta sucursal.</p>
+              <a href="village.html">Ir a Village</a>
             </article>
-            <article class="module-card reveal" style="--delay: 0.18s">
-              <h3>Acceso directo</h3>
-              <p>Mapa compartido por ti para esta ubicación.</p>
-              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/HPCH2DRd57vGc7hVA"
-                >Abrir Village en Google Maps</a
-              >
+            <article class="overview-card reveal" style="--delay: 0.16s">
+              <h3>Downtown</h3>
+              <p>Sección independiente con información propia de Downtown.</p>
+              <a href="downtown.html">Ir a Downtown</a>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="downtown" class="section module-section alt local-downtown">
-        <div class="container">
-          <div class="module-head reveal" style="--delay: 0.06s">
-            <p class="module-tag">Local 02</p>
-            <h2>La Casita de Yeya Downtown</h2>
-            <p>Sección dedicada al local Downtown. Aquí iremos afinando contenido comercial y operativo.</p>
-          </div>
-
-          <div class="module-grid">
-            <article class="module-card reveal" style="--delay: 0.12s">
-              <img class="local-swatch" src="assets/locales/downtown-brush.svg" alt="Placeholder amarillo Downtown" />
-              <h3>Resumen del local</h3>
-              <p>Ubicación con alto movimiento y oportunidad fuerte para pedidos digitales y pickup.</p>
+            <article class="overview-card reveal" style="--delay: 0.2s">
+              <h3>Los Corales</h3>
+              <p>Página dedicada para enfoque turístico, ubicación y oferta local.</p>
+              <a href="los-corales.html">Ir a Los Corales</a>
             </article>
-            <article class="module-card reveal" style="--delay: 0.18s">
-              <h3>Acceso directo</h3>
-              <p>Mapa compartido por ti para esta ubicación.</p>
-              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/Q7YqUKmgGGEUhB9pp"
-                >Abrir Downtown en Google Maps</a
-              >
+            <article class="overview-card reveal" style="--delay: 0.24s">
+              <h3>Nosotros</h3>
+              <p>Historia completa del restaurante, valores y evolución de la marca.</p>
+              <a href="nosotros.html">Ir a Nosotros</a>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section id="los-corales" class="section module-section local-corales">
-        <div class="container">
-          <div class="module-head reveal" style="--delay: 0.06s">
-            <p class="module-tag">Local 03</p>
-            <h2>La Casita de Yeya Los Corales</h2>
-            <p>Sección dedicada al local Los Corales. Aquí integraremos oferta para zona turística y delivery.</p>
-          </div>
-
-          <div class="module-grid">
-            <article class="module-card reveal" style="--delay: 0.12s">
-              <img class="local-swatch" src="assets/locales/los-corales-brush.svg" alt="Placeholder rojo Los Corales" />
-              <h3>Resumen del local</h3>
-              <p>Local estratégico para visitantes de playa que buscan auténtica comida dominicana.</p>
-            </article>
-            <article class="module-card reveal" style="--delay: 0.18s">
-              <h3>Acceso directo</h3>
-              <p>Mapa compartido por ti para esta ubicación.</p>
-              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/tYgUz1eL5Of8qEaNY"
-                >Abrir Los Corales en Google Maps</a
-              >
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="nosotros" class="section about-section alt">
-        <div class="container reveal" style="--delay: 0.08s">
-          <p class="module-tag">Nosotros</p>
-          <h2>Tradición, sabor y cercanía</h2>
-          <p>
-            La Casita de Yeya representa una cocina criolla hecha con sazón casera, atención cercana y consistencia.
-            Esta sección crecerá con historia detallada, equipo, valores y visión de marca.
-          </p>
         </div>
       </section>
     </main>

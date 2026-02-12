@@ -1,7 +1,11 @@
-const CACHE_NAME = "yeya-demo-v1";
+const CACHE_NAME = "yeya-demo-v2";
 const ASSETS = [
   "./",
   "./index.html",
+  "./village.html",
+  "./downtown.html",
+  "./los-corales.html",
+  "./nosotros.html",
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",
@@ -9,6 +13,9 @@ const ASSETS = [
   "./assets/avatar-yeya.jpg",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
+  "./assets/locales/village-brush.svg",
+  "./assets/locales/downtown-brush.svg",
+  "./assets/locales/los-corales-brush.svg",
 ];
 
 self.addEventListener("install", (event) => {

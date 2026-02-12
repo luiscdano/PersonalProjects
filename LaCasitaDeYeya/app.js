@@ -1,10 +1,14 @@
 const revealElements = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll("main section[id]");
 const menuToggle = document.querySelector("#menu-toggle");
 const mainNav = document.querySelector("#main-nav");
+const navLinks = document.querySelectorAll(".nav-link");
 
 function initRevealObserver() {
+  if (!("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => element.classList.add("in-view"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -22,33 +26,10 @@ function initRevealObserver() {
   revealElements.forEach((element) => observer.observe(element));
 }
 
-function updateActiveLink() {
-  let currentId = "home";
-
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= 130) {
-      currentId = section.id;
-    }
-  });
-
-  navLinks.forEach((link) => {
-    const isActive = link.getAttribute("href") === `#${currentId}`;
-    link.classList.toggle("is-active", isActive);
-  });
-}
-
-function initNavBehavior() {
-  window.addEventListener("scroll", updateActiveLink, { passive: true });
-  updateActiveLink();
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (!mainNav.classList.contains("open")) return;
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
-  });
+function closeMobileMenu() {
+  if (!mainNav || !menuToggle) return;
+  mainNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
 }
 
 function initMobileMenu() {
@@ -58,8 +39,15 @@ function initMobileMenu() {
     const isOpen = mainNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 760) {
+        closeMobileMenu();
+      }
+    });
+  });
 }
 
 initRevealObserver();
-initNavBehavior();
 initMobileMenu();

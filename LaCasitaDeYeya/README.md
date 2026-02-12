@@ -1,27 +1,22 @@
-# La Casita de Yeya | Web Modular
+# La Casita de Yeya | Sitio Multipagina
 
-Primera fase de la propuesta: estructura seccionada y escalable con navegación por módulos.
+Estructura modular real por páginas: cada sección principal tiene su URL independiente.
 
-## Estructura actual
-- `Home`
-- `Village`
-- `Downtown`
-- `Los Corales`
-- `Nosotros`
+## Arquitectura actual
+- `index.html` -> `Home` (resumen general)
+- `village.html` -> `Village`
+- `downtown.html` -> `Downtown`
+- `los-corales.html` -> `Los Corales`
+- `nosotros.html` -> `Nosotros`
 
 ## Implementado en esta fase
-- TopBar con navegación por anclas a cada sección.
-- Home con breve historia de marca.
-- Tarjetas flotantes en movimiento (izquierda/derecha/izquierda) para:
-  - La Casita de Yeya Village
-  - La Casita de Yeya Downtown
-  - La Casita de Yeya Los Corales
+- TopBar con enlaces entre páginas (no scroll interno por anclas).
+- Home como resumen de marca con acceso rápido a cada local.
+- Página individual para cada sucursal con módulos propios.
 - Placeholder por color aplicado por local:
   - Azul: Village
   - Amarillo: Downtown
   - Rojo: Los Corales
-- Cada tarjeta enlaza a su sección correspondiente.
-- Secciones base separadas para cada local y para Nosotros.
 - Carpeta lista para reemplazo de imágenes reales: `assets/locales/`.
 
 ## Enlaces de ubicaciones (Google)
@@ -33,8 +28,13 @@ Primera fase de la propuesta: estructura seccionada y escalable con navegación 
 ```bash
 python3 -m http.server 8080
 ```
-Abrir: `http://localhost:8080`
+Abrir:
+- `http://localhost:8080/index.html`
+- `http://localhost:8080/village.html`
+- `http://localhost:8080/downtown.html`
+- `http://localhost:8080/los-corales.html`
+- `http://localhost:8080/nosotros.html`
 
 ## Publicación (GitHub Pages)
-Ruta esperada:
+Ruta base:
 - `https://luiscdano.github.io/PersonalProjects/LaCasitaDeYeya/`
