@@ -1,33 +1,36 @@
-# La Casita de Yeya | Demo Web + App
+# La Casita de Yeya | Web Modular
 
-Propuesta visual y funcional para presentar a **La Casita de Yeya** una transformación digital con:
-- Sitio web de marca (landing + menú interactivo)
-- Vista tipo app móvil (menú, pedido y tracking)
-- Configuración PWA instalable
+Primera fase de la propuesta: estructura seccionada y escalable con navegación por módulos.
 
-## Demo local
-1. En esta carpeta, levanta un servidor estático:
-   ```bash
-   python -m http.server 8080
-   ```
-2. Abre en el navegador:
-   - `http://localhost:8080`
+## Estructura actual
+- `Home`
+- `Village`
+- `Downtown`
+- `Los Corales`
+- `Nosotros`
 
-## Estructura
-- `index.html`: landing principal + secciones comerciales
-- `styles.css`: sistema visual basado en los colores del logo
-- `app.js`: interacciones (filtros de menú, carrito demo, mockup app, tracking)
-- `manifest.webmanifest`: configuración PWA
-- `sw.js`: caché básico offline
-- `assets/`: logo/avatar e íconos
+## Implementado en esta fase
+- TopBar con navegación por anclas a cada sección.
+- Home con breve historia de marca.
+- Tarjetas flotantes en movimiento (izquierda/derecha/izquierda) para:
+  - La Casita de Yeya Village
+  - La Casita de Yeya Downtown
+  - La Casita de Yeya Los Corales
+- Cada tarjeta enlaza a su sección correspondiente.
+- Secciones base separadas para cada local y para Nosotros.
 
-## Publicación en GitHub Pages
-Como este proyecto vive dentro del repo `PersonalProjects`, al publicarlo quedaría en:
+## Enlaces de ubicaciones (Google)
+- Village: `https://share.google/HPCH2DRd57vGc7hVA`
+- Downtown: `https://share.google/Q7YqUKmgGGEUhB9pp`
+- Los Corales: `https://share.google/tYgUz1eL5Of8qEaNY`
+
+## Desarrollo local
+```bash
+python3 -m http.server 8080
+```
+Abrir: `http://localhost:8080`
+
+## Publicación (GitHub Pages)
+Ruta esperada:
 - `https://luiscdano.github.io/PersonalProjects/LaCasitaDeYeya/`
 
-## Notas
-- Se usaron referencias públicas actuales del Linktree de la marca:
-  - Menú: `https://tumenurd.com/menu/yeya/`
-  - PedidosYa: `https://www.pedidosya.com.do/restaurantes/punta-cana---bavaro/la-casita-de-yeya-punta-cana-menu`
-  - Ubicaciones: links de Google Maps publicados en su Linktree.
-- Algunos platos/precios del demo son representativos para la propuesta visual y pueden ajustarse con el menú final oficial.

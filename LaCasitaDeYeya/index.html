@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Demo web + app para La Casita de Yeya. Cocina típica dominicana con experiencia digital completa."
+      content="La Casita de Yeya: propuesta web modular con secciones para Home, Village, Downtown, Los Corales y Nosotros."
     />
-    <meta name="theme-color" content="#0046b8" />
-    <title>La Casita de Yeya | Demo Web + App</title>
+    <meta name="theme-color" content="#004bb8" />
+    <title>La Casita de Yeya | Web Modular</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,244 +21,160 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="heat-overlay" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a href="#inicio" class="brand" aria-label="Ir al inicio">
-          <img src="assets/avatar-yeya.jpg" alt="Logo La Casita de Yeya" />
+    <header class="topbar" id="top">
+      <div class="container topbar-inner">
+        <a href="#home" class="brand" aria-label="Ir a Home">
+          <img src="assets/avatar-yeya.jpg" alt="Logo de La Casita de Yeya" />
           <div>
             <span>La Casita de</span>
             <strong>YEYA</strong>
           </div>
         </a>
 
-        <nav aria-label="Principal">
-          <a href="#menu">Menú</a>
-          <a href="#app">App</a>
-          <a href="#ubicaciones">Ubicaciones</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">Menu</button>
 
-        <a class="btn btn-primary" href="https://tumenurd.com/menu/yeya/" target="_blank" rel="noreferrer noopener"
-          >Ver Menú</a
-        >
+        <nav id="main-nav" aria-label="Navegación principal">
+          <a href="#home" class="nav-link is-active">Home</a>
+          <a href="#village" class="nav-link">Village</a>
+          <a href="#downtown" class="nav-link">Downtown</a>
+          <a href="#los-corales" class="nav-link">Los Corales</a>
+          <a href="#nosotros" class="nav-link">Nosotros</a>
+        </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero" id="inicio">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal" style="--delay: 0.05s">
-            <p class="kicker">Cocina típica Dominicana desde hace casi 15 años</p>
-            <h1>
-              De un Linktree a una
-              <span>experiencia digital completa</span>
-            </h1>
-            <p>
-              Este demo muestra cómo <strong>La Casita de Yeya</strong> puede convertir visitas en pedidos con una
-              página web profesional y una app móvil con pedidos directos, tracking y fidelización.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#app">Ver Demo App</a>
-              <a class="btn btn-ghost" href="https://linktr.ee/lacasitadeyeya" target="_blank" rel="noreferrer noopener"
-                >Comparar con Linktree</a
-              >
-            </div>
-            <ul class="metrics">
-              <li>
-                <strong>2</strong>
-                <span>sucursales activas</span>
-              </li>
-              <li>
-                <strong>+14</strong>
-                <span>años de trayectoria</span>
-              </li>
-              <li>
-                <strong>24/7</strong>
-                <span>canal digital disponible</span>
-              </li>
-            </ul>
-          </div>
-
-          <aside class="hero-card reveal" style="--delay: 0.15s" aria-label="Resumen de transformación digital">
-            <img src="assets/logo-yeya.jpg" alt="Arte de marca La Casita de Yeya" class="hero-logo" />
-            <div class="status-list">
-              <div>
-                <h3>Situación actual</h3>
-                <p>Enlaces sueltos para menú, pedidos y mapas.</p>
-              </div>
-              <div>
-                <h3>Propuesta web + app</h3>
-                <p>Todo integrado en una experiencia que vende más y retiene clientes.</p>
-              </div>
-            </div>
-            <div class="hero-chip-wrap" role="list" aria-label="Ventajas principales">
-              <span role="listitem">Pedidos directos</span>
-              <span role="listitem">Programa de lealtad</span>
-              <span role="listitem">Push promos</span>
-              <span role="listitem">Reservas rápidas</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="benefits container" aria-labelledby="beneficios-title">
-        <h2 id="beneficios-title" class="section-title reveal" style="--delay: 0.05s">Por qué les conviene dar el paso</h2>
-        <div class="benefit-grid">
-          <article class="benefit-card reveal" style="--delay: 0.1s">
-            <h3>Más pedidos sin comisiones altas</h3>
-            <p>Canal propio para vender directo y conservar mejor margen por orden.</p>
-          </article>
-          <article class="benefit-card reveal" style="--delay: 0.16s">
-            <h3>Marca más fuerte en Punta Cana</h3>
-            <p>Una presencia digital premium que transmite confianza y calidad criolla.</p>
-          </article>
-          <article class="benefit-card reveal" style="--delay: 0.22s">
-            <h3>Datos reales de clientes</h3>
-            <p>Historial de consumo para promociones inteligentes y recompra.</p>
-          </article>
-          <article class="benefit-card reveal" style="--delay: 0.28s">
-            <h3>App instalable (PWA)</h3>
-            <p>Experiencia tipo app en iPhone/Android sin depender al 100% de terceros.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="menu-section" id="menu">
+      <section id="home" class="section home-section">
         <div class="container">
-          <div class="menu-head reveal" style="--delay: 0.05s">
-            <h2 class="section-title">Menú digital interactivo</h2>
-            <p>Filtra por categoría y agrega platos al pedido demo.</p>
-          </div>
-
-          <div class="menu-controls reveal" style="--delay: 0.1s" role="tablist" aria-label="Filtros de menú">
-            <button class="pill is-active" data-filter="all" role="tab" aria-selected="true">Todo</button>
-            <button class="pill" data-filter="almuerzo" role="tab" aria-selected="false">Almuerzo</button>
-            <button class="pill" data-filter="antojito" role="tab" aria-selected="false">Antojitos</button>
-            <button class="pill" data-filter="bebida" role="tab" aria-selected="false">Bebidas</button>
-            <button class="pill" data-filter="postre" role="tab" aria-selected="false">Postres</button>
-          </div>
-
-          <div class="menu-grid">
-            <div id="menu-items" class="menu-items reveal" style="--delay: 0.15s"></div>
-
-            <aside class="order-panel reveal" style="--delay: 0.2s" aria-live="polite">
-              <h3>Pedido rápido</h3>
-              <p class="order-note">Simulación de checkout para la app/web.</p>
-              <ul id="cart-list"></ul>
-              <div class="order-total">
-                <span>Total</span>
-                <strong id="cart-total">RD$0</strong>
-              </div>
-              <a
-                class="btn btn-primary full"
-                target="_blank"
-                rel="noreferrer noopener"
-                href="https://www.pedidosya.com.do/restaurantes/punta-cana---bavaro/la-casita-de-yeya-punta-cana-menu?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action"
-                >Ir a PedidosYa</a
-              >
-              <a class="btn btn-ghost full" target="_blank" rel="noreferrer noopener" href="https://tumenurd.com/menu/yeya/"
-                >Abrir menú actual</a
-              >
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-showcase" id="app">
-        <div class="container app-layout">
-          <div class="app-copy reveal" style="--delay: 0.05s">
-            <h2 class="section-title">Vista tipo app móvil para sorprender al cliente</h2>
+          <div class="home-header reveal" style="--delay: 0.04s">
+            <p class="kicker">Cocina típica dominicana con casi 15 años de historia</p>
+            <h1>Una marca local sólida que merece una presencia digital a su nivel</h1>
             <p>
-              Prototipo funcional con menú, carrito y estado de orden. Esta experiencia puede presentarse como app
-              nativa o PWA instalable.
+              La Casita de Yeya nació como una propuesta de comida criolla auténtica y se ha convertido en un punto
+              de referencia para locales y visitantes en Punta Cana. Esta web modular organiza cada sucursal como una
+              experiencia propia, manteniendo una sola identidad de marca.
             </p>
-            <div class="app-points">
-              <div>
-                <h3>Push de promociones</h3>
-                <p>Notifica combos del día y ofertas especiales por sucursal.</p>
-              </div>
-              <div>
-                <h3>Seguimiento en tiempo real</h3>
-                <p>Menos llamadas y mejor experiencia post-pedido.</p>
-              </div>
-              <div>
-                <h3>Lealtad digital</h3>
-                <p>Puntos por compras frecuentes y recompensas automáticas.</p>
-              </div>
-            </div>
           </div>
 
-          <div class="phone reveal" style="--delay: 0.16s" aria-label="Mockup funcional de app">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <header>
-                <span>La Casita App</span>
-                <small id="mobile-clock">--:--</small>
-              </header>
+          <div class="floating-locals" aria-label="Acceso rápido a locales">
+            <article class="floating-card left reveal" style="--delay: 0.1s">
+              <img src="assets/logo-yeya.jpg" alt="La Casita de Yeya Village" />
+              <div class="floating-content">
+                <a href="#village">La Casita de Yeya Village</a>
+                <p>Primera parada destacada, ideal para clientes de la zona Village.</p>
+              </div>
+            </article>
 
-              <div id="app-view" class="app-view"></div>
+            <article class="floating-card right reveal" style="--delay: 0.2s">
+              <img src="assets/logo-yeya.jpg" alt="La Casita de Yeya Downtown" />
+              <div class="floating-content">
+                <a href="#downtown">La Casita de Yeya Downtown</a>
+                <p>Ubicación estratégica con alto flujo de visitantes y residentes.</p>
+              </div>
+            </article>
 
-              <footer class="app-tabs" role="tablist" aria-label="Navegación app">
-                <button class="tab is-active" data-view="menu" role="tab" aria-selected="true">Menú</button>
-                <button class="tab" data-view="order" role="tab" aria-selected="false">Pedido</button>
-                <button class="tab" data-view="track" role="tab" aria-selected="false">Tracking</button>
-              </footer>
-            </div>
+            <article class="floating-card left reveal" style="--delay: 0.3s">
+              <img src="assets/logo-yeya.jpg" alt="La Casita de Yeya Los Corales" />
+              <div class="floating-content">
+                <a href="#los-corales">La Casita de Yeya Los Corales</a>
+                <p>Punto clave para reforzar presencia en zona turística de playa.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="locations container" id="ubicaciones">
-        <h2 class="section-title reveal" style="--delay: 0.05s">Ubicaciones destacadas</h2>
-        <div class="location-grid">
-          <article class="location-card reveal" style="--delay: 0.1s">
-            <h3>Punta Cana Village</h3>
-            <p>Ideal para residentes y tránsito cercano al aeropuerto.</p>
-            <a
-              href="https://www.google.com/maps/dir//La+Casita+de+Yeya+Downtown+Punta+Cana/@18.62133,-68.4662303,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8ea8933a4ece3ebb:0x4b47691ce96580b8!2m2!1d-68.3704891!2d18.5593803"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Abrir en Google Maps</a
-            >
-          </article>
-          <article class="location-card reveal" style="--delay: 0.16s">
-            <h3>Downtown Punta Cana</h3>
-            <p>Alta visibilidad para turistas y residentes de la zona comercial.</p>
-            <a
-              href="https://www.google.com/maps/dir//La+Casita+de+Yeya+Downtown+Punta+Cana/@18.6595845,-68.4242147,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8ea8933a8d0c51d7:0x82819f88f66f5918!2m2!1d-68.3951953!2d18.63493"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Abrir en Google Maps</a
-            >
-          </article>
+      <section id="village" class="section module-section">
+        <div class="container">
+          <div class="module-head reveal" style="--delay: 0.06s">
+            <p class="module-tag">Local 01</p>
+            <h2>La Casita de Yeya Village</h2>
+            <p>Sección dedicada al local Village. Aquí iremos colocando contenido específico de este punto.</p>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card reveal" style="--delay: 0.12s">
+              <h3>Resumen del local</h3>
+              <p>Ambiente familiar, menú criollo y enfoque en servicio rápido para residentes y visitantes.</p>
+            </article>
+            <article class="module-card reveal" style="--delay: 0.18s">
+              <h3>Acceso directo</h3>
+              <p>Mapa compartido por ti para esta ubicación.</p>
+              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/HPCH2DRd57vGc7hVA"
+                >Abrir Village en Google Maps</a
+              >
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="roadmap container" aria-labelledby="roadmap-title">
-        <h2 id="roadmap-title" class="section-title reveal" style="--delay: 0.05s">Propuesta de ejecución (rápida)</h2>
-        <ol class="steps">
-          <li class="reveal" style="--delay: 0.08s"><strong>Día 1-3:</strong> Web pública + SEO local + analítica.</li>
-          <li class="reveal" style="--delay: 0.12s"><strong>Día 4-7:</strong> Menú editable y pedido directo.</li>
-          <li class="reveal" style="--delay: 0.16s"><strong>Día 8-11:</strong> PWA instalable y notificaciones.</li>
-          <li class="reveal" style="--delay: 0.2s"><strong>Día 12-14:</strong> Lanzamiento y campaña inicial.</li>
-        </ol>
+      <section id="downtown" class="section module-section alt">
+        <div class="container">
+          <div class="module-head reveal" style="--delay: 0.06s">
+            <p class="module-tag">Local 02</p>
+            <h2>La Casita de Yeya Downtown</h2>
+            <p>Sección dedicada al local Downtown. Aquí iremos afinando contenido comercial y operativo.</p>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card reveal" style="--delay: 0.12s">
+              <h3>Resumen del local</h3>
+              <p>Ubicación con alto movimiento y oportunidad fuerte para pedidos digitales y pickup.</p>
+            </article>
+            <article class="module-card reveal" style="--delay: 0.18s">
+              <h3>Acceso directo</h3>
+              <p>Mapa compartido por ti para esta ubicación.</p>
+              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/Q7YqUKmgGGEUhB9pp"
+                >Abrir Downtown en Google Maps</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="los-corales" class="section module-section">
+        <div class="container">
+          <div class="module-head reveal" style="--delay: 0.06s">
+            <p class="module-tag">Local 03</p>
+            <h2>La Casita de Yeya Los Corales</h2>
+            <p>Sección dedicada al local Los Corales. Aquí integraremos oferta para zona turística y delivery.</p>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card reveal" style="--delay: 0.12s">
+              <h3>Resumen del local</h3>
+              <p>Local estratégico para visitantes de playa que buscan auténtica comida dominicana.</p>
+            </article>
+            <article class="module-card reveal" style="--delay: 0.18s">
+              <h3>Acceso directo</h3>
+              <p>Mapa compartido por ti para esta ubicación.</p>
+              <a class="module-link" target="_blank" rel="noreferrer noopener" href="https://share.google/tYgUz1eL5Of8qEaNY"
+                >Abrir Los Corales en Google Maps</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros" class="section about-section alt">
+        <div class="container reveal" style="--delay: 0.08s">
+          <p class="module-tag">Nosotros</p>
+          <h2>Tradición, sabor y cercanía</h2>
+          <p>
+            La Casita de Yeya representa una cocina criolla hecha con sazón casera, atención cercana y consistencia.
+            Esta sección crecerá con historia detallada, equipo, valores y visión de marca.
+          </p>
+        </div>
       </section>
     </main>
 
-    <footer class="site-footer" id="contacto">
-      <div class="container footer-wrap">
-        <div>
-          <p class="footer-brand">La Casita de <span>YEYA</span></p>
-          <p>Cocina típica Dominicana con una experiencia digital a la altura de su trayectoria.</p>
-        </div>
-        <div class="footer-actions">
-          <a class="btn btn-primary" target="_blank" rel="noreferrer noopener" href="https://linktr.ee/lacasitadeyeya"
-            >Abrir Linktree</a
-          >
-          <a class="btn btn-ghost" href="#inicio">Volver arriba</a>
-        </div>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>La Casita de Yeya</p>
+        <a href="#top">Volver arriba</a>
       </div>
     </footer>
 
