@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="titleVillage descVillage">
-  <title id="titleVillage">Placeholder azul Village</title>
-  <desc id="descVillage">Textura tipo brocha azul para representar la sucursal Village.</desc>
-  <path d="M130 160 C330 80, 560 90, 1000 150" fill="none" stroke="#0E63DA" stroke-width="105" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
-  <path d="M100 270 C360 205, 690 235, 1080 290" fill="none" stroke="#1E7BEE" stroke-width="118" stroke-linecap="round" stroke-linejoin="round" opacity="0.93"/>
-  <path d="M110 395 C330 330, 680 355, 1020 420" fill="none" stroke="#1B6FE1" stroke-width="108" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
-  <path d="M190 515 C430 465, 730 500, 980 560" fill="none" stroke="#0F4FC4" stroke-width="88" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-</svg>

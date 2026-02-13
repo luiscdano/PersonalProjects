@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="titleDowntown descDowntown">
-  <title id="titleDowntown">Placeholder amarillo Downtown</title>
-  <desc id="descDowntown">Textura tipo brocha amarilla para representar la sucursal Downtown.</desc>
-  <path d="M100 165 C290 90, 560 105, 1020 170" fill="none" stroke="#FFD81A" stroke-width="108" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-  <path d="M75 285 C350 210, 710 235, 1100 300" fill="none" stroke="#FFCE00" stroke-width="122" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
-  <path d="M105 420 C365 345, 680 365, 1040 438" fill="none" stroke="#FFD12B" stroke-width="112" stroke-linecap="round" stroke-linejoin="round" opacity="0.94"/>
-  <path d="M185 540 C430 478, 765 515, 1010 572" fill="none" stroke="#FFC80B" stroke-width="90" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-</svg>

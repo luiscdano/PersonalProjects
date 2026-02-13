@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Menú: platos dominicanos, bebidas y especiales de La Casita de Yeya." />
+    <title>La Casita de Yeya | Menú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/css/main.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="../index.html" class="brand" aria-label="Ir a inicio">
+          <img src="../shared/img/logo-yeya.jpg" alt="Logo de La Casita de Yeya" />
+          <span>
+            <small>La Casita de</small>
+            <strong>YEYA</strong>
+          </span>
+        </a>
+
+        <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Abrir navegación">Menu</button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li class="nav-group">
+              <details>
+                <summary>Localidad</summary>
+                <ul class="submenu">
+                  <li><a href="../localidad/village/index.html">Village</a></li>
+                  <li><a href="../localidad/downtown/index.html">Downtown</a></li>
+                  <li><a href="../localidad/los-corales/index.html">Lo Corales</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a class="nav-link is-active" href="index.html">Menú</a></li>
+            <li class="nav-group">
+              <details>
+                <summary>Sobre</summary>
+                <ul class="submenu">
+                  <li><a href="../sobre/descripcion-general/index.html">Descripción General</a></li>
+                  <li><a href="../sobre/nuestra-huella/index.html">Nuestra Huella</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a class="nav-link" href="../abastecimiento/index.html">Abastecimiento</a></li>
+            <li><a class="nav-link" href="../reserva/index.html">Reserva</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section-block">
+        <p class="kicker">Menú</p>
+        <h1>Sabores de la casa</h1>
+        <p>Base inicial para organizar el menú real por categorías. Los precios son referenciales y editables.</p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Desayunos</h3>
+            <p>Mangú con tres golpes - RD$ 450</p>
+            <p>Avena y fruta tropical - RD$ 290</p>
+          </article>
+          <article class="card">
+            <h3>Platos fuertes</h3>
+            <p>Bandera dominicana - RD$ 520</p>
+            <p>Chivo guisado con moro - RD$ 690</p>
+          </article>
+          <article class="card">
+            <h3>Especiales</h3>
+            <p>Pescado frito con tostones - RD$ 760</p>
+            <p>Pechuga criolla a la plancha - RD$ 620</p>
+          </article>
+          <article class="card">
+            <h3>Bebidas</h3>
+            <p>Jugo natural del día - RD$ 180</p>
+            <p>Limonada de la casa - RD$ 220</p>
+          </article>
+          <article class="card">
+            <h3>Postres</h3>
+            <p>Flan de coco - RD$ 210</p>
+            <p>Dulce de leche cortada - RD$ 190</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>La Casita de Yeya</p>
+        <a href="../index.html">Inicio</a>
+      </div>
+    </footer>
+
+    <script src="../shared/js/main.js"></script>
+  </body>
+</html>
