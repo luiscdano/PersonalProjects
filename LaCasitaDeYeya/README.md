@@ -11,6 +11,9 @@ Sitio reiniciado desde cero con arquitectura seccionada por carpetas.
   - `css/main.css`
   - `js/main.js`
   - `img/logo.png`
+  - `data/instagram-feed.json`
+- `scripts/`
+  - `update_instagram_feed.sh`
 - `localidad/`
   - `index.html`
   - `img/`
@@ -50,3 +53,12 @@ python3 -m http.server 8080
 ```
 Abrir:
 - `http://localhost:8080/index.html`
+
+## Feed de Instagram
+- Home incluye sección `Síguenos en Instagram` cargada desde `shared/data/instagram-feed.json`.
+- Para refrescar manualmente el feed:
+```bash
+./scripts/update_instagram_feed.sh
+```
+- Sincronización automática:
+  - Workflow en `../.github/workflows/lacasita-instagram-sync.yml` (cada 6 horas + manual).
