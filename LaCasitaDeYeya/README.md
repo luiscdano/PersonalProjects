@@ -10,7 +10,7 @@ Sitio reiniciado desde cero con arquitectura seccionada por carpetas.
 - `shared/` (recursos globales)
   - `css/main.css`
   - `js/main.js`
-  - `img/logo-yeya.jpg`
+  - `img/logo.png`
 - `localidad/`
   - `index.html`
   - `img/`
