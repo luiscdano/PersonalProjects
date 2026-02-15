@@ -379,10 +379,6 @@ p {
   background: rgba(252, 22, 29, 0.92);
 }
 
-.instagram-badge.is-image {
-  background: rgba(8, 32, 119, 0.85);
-}
-
 .instagram-loading,
 .instagram-empty {
   grid-column: 1 / -1;

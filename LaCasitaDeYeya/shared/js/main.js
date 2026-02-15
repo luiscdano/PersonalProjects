@@ -46,10 +46,12 @@ function buildInstagramCard(post, profileUrl) {
 
   card.appendChild(image);
 
-  const badge = document.createElement('span');
-  badge.className = `instagram-badge ${post.is_video ? 'is-reel' : 'is-image'}`;
-  badge.textContent = post.is_video ? 'Reel' : 'Imagen';
-  card.appendChild(badge);
+  if (post.is_video) {
+    const badge = document.createElement('span');
+    badge.className = 'instagram-badge is-reel';
+    badge.textContent = 'Reel';
+    card.appendChild(badge);
+  }
 
   return card;
 }
