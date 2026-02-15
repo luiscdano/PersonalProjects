@@ -357,60 +357,30 @@ p {
   transition: transform 0.28s ease;
 }
 
-.instagram-post::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(8, 32, 119, 0.02), rgba(8, 32, 119, 0.72));
-  opacity: 0;
-  transition: opacity 0.22s ease;
-}
-
 .instagram-post:hover img {
   transform: scale(1.06);
-}
-
-.instagram-post:hover::after {
-  opacity: 1;
-}
-
-.instagram-caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  margin: 0;
-  padding: 0.65rem;
-  color: #fff;
-  font-size: 0.78rem;
-  line-height: 1.23;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
-}
-
-.instagram-post:hover .instagram-caption {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .instagram-badge {
   position: absolute;
   top: 0.55rem;
-  right: 0.55rem;
+  left: 0.55rem;
   z-index: 1;
   border-radius: 999px;
-  background: rgba(252, 22, 29, 0.9);
   color: #fff;
   font-size: 0.68rem;
   font-weight: 800;
   padding: 0.22rem 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(2px);
+}
+
+.instagram-badge.is-reel {
+  background: rgba(252, 22, 29, 0.92);
+}
+
+.instagram-badge.is-image {
+  background: rgba(8, 32, 119, 0.85);
 }
 
 .instagram-loading,

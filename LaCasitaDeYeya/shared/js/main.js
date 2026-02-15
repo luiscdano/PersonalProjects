@@ -46,17 +46,10 @@ function buildInstagramCard(post, profileUrl) {
 
   card.appendChild(image);
 
-  if (post.is_video) {
-    const badge = document.createElement('span');
-    badge.className = 'instagram-badge';
-    badge.textContent = 'Reel';
-    card.appendChild(badge);
-  }
-
-  const caption = document.createElement('p');
-  caption.className = 'instagram-caption';
-  caption.textContent = truncateText(post.caption || 'Ver publicación', 110);
-  card.appendChild(caption);
+  const badge = document.createElement('span');
+  badge.className = `instagram-badge ${post.is_video ? 'is-reel' : 'is-image'}`;
+  badge.textContent = post.is_video ? 'Reel' : 'Imagen';
+  card.appendChild(badge);
 
   return card;
 }
