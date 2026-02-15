@@ -24,7 +24,7 @@ jobs:
 
       - name: Commit and push if feed changed
         run: |
-          if git diff --quiet -- shared/data/instagram-feed.json; then
+          if git diff --quiet -- shared/data/instagram-feed.json shared/data/instagram; then
             echo "No hay cambios en el feed"
             exit 0
           fi
@@ -32,6 +32,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add shared/data/instagram-feed.json
+          git add -A shared/data/instagram-feed.json shared/data/instagram
           git commit -m "chore: sincronizar feed de Instagram"
           git push

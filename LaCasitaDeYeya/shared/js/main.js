@@ -1,5 +1,6 @@
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const mainNav = document.querySelector('#main-nav');
+const FALLBACK_INSTAGRAM_IMAGE = 'shared/img/logo.png';
 
 function initMobileMenu() {
   if (!menuToggle || !mainNav) return;
@@ -25,20 +26,6 @@ function truncateText(value, max = 120) {
   return `${value.slice(0, max - 1)}…`;
 }
 
-function formatFeedDate(value) {
-  if (!value) return '';
-  const parsed = new Date(value);
-  if (Number.isNaN(parsed.getTime())) return '';
-
-  return new Intl.DateTimeFormat('es-DO', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  }).format(parsed);
-}
-
 function buildInstagramCard(post, profileUrl) {
   const card = document.createElement('a');
   card.className = 'instagram-post';
@@ -52,6 +39,10 @@ function buildInstagramCard(post, profileUrl) {
   image.alt = truncateText(post.caption || 'Publicación reciente de Instagram', 90);
   image.loading = 'lazy';
   image.decoding = 'async';
+  image.referrerPolicy = 'no-referrer';
+  image.addEventListener('error', () => {
+    image.src = FALLBACK_INSTAGRAM_IMAGE;
+  });
 
   card.appendChild(image);
 
@@ -94,12 +85,11 @@ async function initInstagramFeed() {
   const container = document.querySelector('[data-instagram-feed]');
   if (!container) return;
 
-  const meta = document.querySelector('[data-instagram-meta]');
   const feedPath = container.dataset.instagramFeed;
   const profileUrl =
     container.dataset.instagramProfile ||
     'https://www.instagram.com/lacasitadeyeya/?hl=es';
-  const limit = Number.parseInt(container.dataset.instagramLimit || '8', 10);
+  const limit = Number.parseInt(container.dataset.instagramLimit || '10', 10);
 
   if (!feedPath) {
     showInstagramFallback(container, profileUrl);
@@ -128,17 +118,7 @@ async function initInstagramFeed() {
 
     container.innerHTML = '';
     container.appendChild(fragment);
-
-    if (meta) {
-      const formattedDate = formatFeedDate(payload.fetched_at);
-      meta.textContent = formattedDate
-        ? `Actualizado: ${formattedDate}`
-        : 'Actualización automática de publicaciones';
-    }
   } catch (error) {
-    if (meta) {
-      meta.textContent = 'Feed temporalmente no disponible';
-    }
     showInstagramFallback(container, profileUrl);
   }
 }

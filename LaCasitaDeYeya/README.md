@@ -12,6 +12,7 @@ Sitio reiniciado desde cero con arquitectura seccionada por carpetas.
   - `js/main.js`
   - `img/logo.png`
   - `data/instagram-feed.json`
+  - `data/instagram/` (miniaturas locales del feed)
 - `scripts/`
   - `update_instagram_feed.sh`
 - `localidad/`
@@ -56,6 +57,7 @@ Abrir:
 
 ## Feed de Instagram
 - Home incluye sección `Síguenos en Instagram` cargada desde `shared/data/instagram-feed.json`.
+- El feed publica los últimos `10` posts y descarga miniaturas locales en `shared/data/instagram/` para evitar bloqueos de imagen.
 - Para refrescar manualmente el feed:
 ```bash
 ./scripts/update_instagram_feed.sh
