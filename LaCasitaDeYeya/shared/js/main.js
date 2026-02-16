@@ -194,6 +194,21 @@ function initMenuBook() {
   });
 
   render();
+
+  if (document.body.classList.contains('menu-view')) {
+    const resetMenuViewport = () => {
+      window.scrollTo(0, 0);
+
+      const activePage = pages[currentIndex];
+      const pageBody = activePage?.querySelector('.menu-page-body');
+      if (pageBody) {
+        pageBody.scrollTop = 0;
+      }
+    };
+
+    resetMenuViewport();
+    window.addEventListener('pageshow', resetMenuViewport);
+  }
 }
 
 initMobileMenu();
