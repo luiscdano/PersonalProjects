@@ -146,24 +146,25 @@ function initMenuBook() {
       indicator.textContent = String(currentIndex + 1);
     });
 
+    const isSinglePage = total <= 1;
     prevButtons.forEach((button) => {
-      button.disabled = currentIndex === 0;
+      button.disabled = isSinglePage;
     });
 
     nextButtons.forEach((button) => {
-      button.disabled = currentIndex === total - 1;
+      button.disabled = isSinglePage;
     });
   }
 
   function goPrev() {
-    if (currentIndex === 0) return;
-    currentIndex -= 1;
+    if (total <= 1) return;
+    currentIndex = (currentIndex - 1 + total) % total;
     render();
   }
 
   function goNext() {
-    if (currentIndex >= total - 1) return;
-    currentIndex += 1;
+    if (total <= 1) return;
+    currentIndex = (currentIndex + 1) % total;
     render();
   }
 

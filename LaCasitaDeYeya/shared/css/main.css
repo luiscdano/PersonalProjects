@@ -510,40 +510,60 @@ p {
   margin-top: 1.4rem;
 }
 
-.menu-main {
+body.menu-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.menu-page .menu-main {
+  flex: 1;
+  min-height: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.menu-main .menu-book-shell,
-.menu-main .menu-book-frame {
-  margin-top: 0;
-}
-
-.menu-main .menu-book-shell {
+body.menu-page .menu-book-shell {
   width: 100%;
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.menu-main .kicker,
-.menu-main .menu-book-shell > h1 {
+body.menu-page .menu-book-frame {
+  margin-top: 0;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body.menu-page .kicker,
+body.menu-page .menu-book-shell > h1 {
   display: none;
 }
 
-.menu-main .menu-book-pages {
-  height: max(480px, calc(100dvh - 82px - 76px));
-  min-height: max(480px, calc(100dvh - 82px - 76px));
+body.menu-page .menu-book-pages {
+  flex: 1;
+  min-height: 0;
+  height: auto;
   border-radius: 0;
   border: 0;
   box-shadow: none;
 }
 
-.menu-main .menu-book-controls-top {
+body.menu-page .menu-book-controls-top {
   top: 0.55rem;
   right: 0.65rem;
 }
 
-.menu-main .menu-book-controls-bottom {
+body.menu-page .menu-book-controls-bottom {
   margin-top: 0;
-  padding: 0.55rem 0 0.85rem;
+  padding: 0.45rem 0 0.7rem;
+  flex-shrink: 0;
 }
 
 .menu-book-shell h1 {
@@ -972,10 +992,21 @@ p {
     justify-content: flex-end;
   }
 
+  body.menu-page .menu-book-controls-top {
+    position: static;
+    width: 100%;
+    margin-bottom: 0.55rem;
+    justify-content: flex-end;
+  }
+
   .menu-book-pages {
     height: min(78vh, 820px);
     min-height: 560px;
     border-radius: 20px;
+  }
+
+  body.menu-page .menu-book-controls-bottom {
+    padding: 0.35rem 0 0.6rem;
   }
 
   .menu-page {
