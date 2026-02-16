@@ -510,6 +510,42 @@ p {
   margin-top: 1.4rem;
 }
 
+.menu-main {
+  padding: 0;
+}
+
+.menu-main .menu-book-shell,
+.menu-main .menu-book-frame {
+  margin-top: 0;
+}
+
+.menu-main .menu-book-shell {
+  width: 100%;
+}
+
+.menu-main .kicker,
+.menu-main .menu-book-shell > h1 {
+  display: none;
+}
+
+.menu-main .menu-book-pages {
+  height: max(480px, calc(100dvh - 82px - 76px));
+  min-height: max(480px, calc(100dvh - 82px - 76px));
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.menu-main .menu-book-controls-top {
+  top: 0.55rem;
+  right: 0.65rem;
+}
+
+.menu-main .menu-book-controls-bottom {
+  margin-top: 0;
+  padding: 0.55rem 0 0.85rem;
+}
+
 .menu-book-shell h1 {
   margin-bottom: 0.35rem;
 }
