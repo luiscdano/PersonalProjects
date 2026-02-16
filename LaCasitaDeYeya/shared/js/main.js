@@ -118,5 +118,75 @@ async function initInstagramFeed() {
   }
 }
 
+function initMenuBook() {
+  const book = document.querySelector('[data-menu-book]');
+  if (!book) return;
+
+  const pages = Array.from(book.querySelectorAll('[data-menu-page]'));
+  const prevButtons = Array.from(book.querySelectorAll('[data-menu-prev]'));
+  const nextButtons = Array.from(book.querySelectorAll('[data-menu-next]'));
+  const currentIndicators = Array.from(book.querySelectorAll('[data-menu-current]'));
+  const totalIndicators = Array.from(book.querySelectorAll('[data-menu-total]'));
+
+  if (!pages.length) return;
+
+  let currentIndex = 0;
+  const total = pages.length;
+
+  totalIndicators.forEach((indicator) => {
+    indicator.textContent = String(total);
+  });
+
+  function render() {
+    pages.forEach((page, index) => {
+      page.classList.toggle('is-active', index === currentIndex);
+    });
+
+    currentIndicators.forEach((indicator) => {
+      indicator.textContent = String(currentIndex + 1);
+    });
+
+    prevButtons.forEach((button) => {
+      button.disabled = currentIndex === 0;
+    });
+
+    nextButtons.forEach((button) => {
+      button.disabled = currentIndex === total - 1;
+    });
+  }
+
+  function goPrev() {
+    if (currentIndex === 0) return;
+    currentIndex -= 1;
+    render();
+  }
+
+  function goNext() {
+    if (currentIndex >= total - 1) return;
+    currentIndex += 1;
+    render();
+  }
+
+  prevButtons.forEach((button) => {
+    button.addEventListener('click', goPrev);
+  });
+
+  nextButtons.forEach((button) => {
+    button.addEventListener('click', goNext);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      goPrev();
+    }
+    if (event.key === 'ArrowRight') {
+      goNext();
+    }
+  });
+
+  render();
+}
+
 initMobileMenu();
+initMenuBook();
 initInstagramFeed();

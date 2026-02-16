@@ -506,6 +506,349 @@ p {
   font-weight: 800;
 }
 
+.menu-book-shell {
+  margin-top: 1.4rem;
+}
+
+.menu-book-shell h1 {
+  margin-bottom: 0.35rem;
+}
+
+.menu-book-frame {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.menu-book-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.menu-book-controls-top {
+  position: absolute;
+  top: -0.2rem;
+  right: 0;
+  z-index: 12;
+}
+
+.menu-book-controls-bottom {
+  margin-top: 0.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.menu-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(8, 32, 119, 0.25);
+  background: linear-gradient(130deg, #ffffff, #ecf3ff);
+  color: var(--azul-oscuro);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(8, 32, 119, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.menu-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(8, 32, 119, 0.22);
+}
+
+.menu-nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 8px 18px rgba(8, 32, 119, 0.12);
+}
+
+.menu-book-progress {
+  margin: 0;
+  min-width: 90px;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+.menu-book-pages {
+  position: relative;
+  height: min(77vh, 860px);
+  min-height: 650px;
+  border-radius: 24px;
+  border: 1px solid rgba(8, 32, 119, 0.17);
+  overflow: hidden;
+  background: #e7ebf4;
+  box-shadow:
+    0 26px 62px rgba(8, 32, 119, 0.24),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.45);
+}
+
+.menu-page {
+  position: absolute;
+  inset: 0;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(30px) rotateY(-8deg) scale(0.985);
+  transform-origin: right center;
+  transition: opacity 0.26s ease, transform 0.35s ease;
+  overflow: hidden;
+}
+
+.menu-page.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) rotateY(0) scale(1);
+}
+
+.menu-page::before,
+.menu-page::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.menu-page::before {
+  top: -40px;
+  left: -38px;
+}
+
+.menu-page::after {
+  right: -40px;
+  bottom: -38px;
+}
+
+.menu-page-body {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding-right: 0.45rem;
+  overflow: auto;
+}
+
+.menu-page-body::-webkit-scrollbar {
+  width: 9px;
+}
+
+.menu-page-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+}
+
+.menu-page-body::-webkit-scrollbar-thumb {
+  background: rgba(8, 32, 119, 0.38);
+  border-radius: 999px;
+}
+
+.theme-cover {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255, 223, 130, 0.32) 0, rgba(255, 223, 130, 0) 28%),
+    repeating-linear-gradient(0deg, #f2f2ed 0 42px, #e7e6df 42px 44px);
+}
+
+.theme-cover::before,
+.theme-cover::after,
+.theme-back::before,
+.theme-back::after {
+  background: radial-gradient(circle, rgba(15, 86, 174, 0.18), rgba(15, 86, 174, 0));
+}
+
+.theme-yellow {
+  color: #173066;
+  background:
+    linear-gradient(180deg, rgba(254, 220, 103, 0.97), rgba(247, 214, 98, 0.95)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0 34px, rgba(19, 48, 102, 0.03) 34px 35px);
+}
+
+.theme-yellow::before,
+.theme-yellow::after {
+  background: radial-gradient(circle, rgba(15, 86, 174, 0.2), rgba(15, 86, 174, 0));
+}
+
+.theme-blue {
+  color: #f2f6ff;
+  background:
+    linear-gradient(180deg, rgba(28, 79, 162, 0.99), rgba(17, 53, 112, 0.98)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 34px, rgba(255, 255, 255, 0.01) 34px 35px);
+}
+
+.theme-blue::before,
+.theme-blue::after {
+  background: radial-gradient(circle, rgba(255, 124, 138, 0.24), rgba(255, 124, 138, 0));
+}
+
+.theme-red {
+  color: #fff4f4;
+  background:
+    linear-gradient(180deg, rgba(188, 43, 52, 0.99), rgba(143, 28, 37, 0.98)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 34px, rgba(255, 255, 255, 0.01) 34px 35px);
+}
+
+.theme-red::before,
+.theme-red::after {
+  background: radial-gradient(circle, rgba(123, 190, 255, 0.24), rgba(123, 190, 255, 0));
+}
+
+.theme-back {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(245, 246, 243, 0.88)),
+    repeating-linear-gradient(0deg, #f2f2ed 0 42px, #e7e6df 42px 44px);
+}
+
+.menu-cover-center,
+.menu-back-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu-cover-logo {
+  width: min(460px, 85%);
+  filter: drop-shadow(0 18px 28px rgba(8, 32, 119, 0.24));
+}
+
+.menu-cover-food {
+  margin-top: 0.35rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #aa1f2b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.menu-cover-title {
+  margin-top: 2rem;
+  font-family: "Amatic SC", cursive;
+  font-size: clamp(3.1rem, 8vw, 5.6rem);
+  color: #153f89;
+  letter-spacing: 0.02em;
+}
+
+.menu-back-logo {
+  width: min(160px, 34%);
+  margin-bottom: 0.5rem;
+}
+
+.menu-back-center p {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #1a3262;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.menu-page-title,
+.menu-section-title {
+  margin: 0;
+  font-family: "Amatic SC", cursive;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.menu-page-title {
+  margin-bottom: 0.4rem;
+  font-size: clamp(2.1rem, 4.3vw, 3rem);
+}
+
+.menu-section-title {
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.theme-yellow .menu-page-title,
+.theme-yellow .menu-section-title {
+  color: #ba2938;
+}
+
+.theme-blue .menu-page-title,
+.theme-blue .menu-section-title {
+  color: #ff9aa6;
+}
+
+.theme-red .menu-page-title,
+.theme-red .menu-section-title {
+  color: #92baff;
+}
+
+.menu-section-block {
+  margin-top: 0.8rem;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0.28rem 0 0;
+  padding: 0;
+}
+
+.menu-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.7rem;
+  align-items: end;
+  padding: 0.14rem 0;
+  border-bottom: 1px dotted rgba(29, 63, 126, 0.48);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(0.96rem, 1.75vw, 1.19rem);
+  letter-spacing: 0.015em;
+}
+
+.theme-blue .menu-line,
+.theme-red .menu-line {
+  border-bottom-color: rgba(255, 255, 255, 0.44);
+}
+
+.menu-line strong {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.menu-note {
+  margin: 0.18rem 0 0.35rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(0.85rem, 1.45vw, 1rem);
+  line-height: 1.17;
+  letter-spacing: 0.015em;
+}
+
+.theme-yellow .menu-note {
+  color: rgba(25, 53, 108, 0.86);
+}
+
+.theme-blue .menu-note,
+.theme-red .menu-note {
+  color: rgba(246, 250, 255, 0.9);
+}
+
+.two-col-menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.3rem;
+}
+
+.two-col-menu .menu-line {
+  margin: 0;
+}
+
+.two-col-on-wide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem 1.25rem;
+}
+
 @media (max-width: 1260px) {
   .instagram-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -523,6 +866,10 @@ p {
 
   .instagram-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-book-pages {
+    min-height: 610px;
   }
 }
 
@@ -581,10 +928,47 @@ p {
   .instagram-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .menu-book-controls-top {
+    position: static;
+    width: 100%;
+    margin-bottom: 0.55rem;
+    justify-content: flex-end;
+  }
+
+  .menu-book-pages {
+    height: min(78vh, 820px);
+    min-height: 560px;
+    border-radius: 20px;
+  }
+
+  .menu-page {
+    padding: 0.8rem;
+  }
+
+  .two-col-menu,
+  .two-col-on-wide {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
   .instagram-grid {
     grid-template-columns: 1fr;
+  }
+
+  .menu-book-pages {
+    height: min(76vh, 760px);
+    min-height: 510px;
+  }
+
+  .menu-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.35rem;
+  }
+
+  .menu-cover-title {
+    margin-top: 1.4rem;
   }
 }
