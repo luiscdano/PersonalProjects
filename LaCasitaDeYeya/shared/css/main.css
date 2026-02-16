@@ -772,13 +772,17 @@ body.menu-view .menu-book-controls-bottom {
   text-align: center;
 }
 
+.menu-cover-center {
+  gap: 0;
+}
+
 .menu-cover-logo {
   width: min(460px, 85%);
   filter: drop-shadow(0 18px 28px rgba(8, 32, 119, 0.24));
 }
 
 .menu-cover-food {
-  margin-top: 0.35rem;
+  margin-top: 0.1rem;
   font-family: "Barlow Condensed", sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: #aa1f2b;
@@ -788,11 +792,12 @@ body.menu-view .menu-book-controls-bottom {
 }
 
 .menu-cover-title {
-  margin-top: 2rem;
+  margin: 0 0 0.35rem;
   font-family: "Amatic SC", cursive;
-  font-size: clamp(3.1rem, 8vw, 5.6rem);
+  font-size: clamp(4rem, 9vw, 7rem);
   color: #153f89;
   letter-spacing: 0.02em;
+  line-height: 0.9;
 }
 
 .menu-back-logo {
@@ -993,9 +998,11 @@ body.menu-view .menu-book-controls-bottom {
   }
 
   body.menu-view .menu-book-controls-top {
-    position: static;
-    width: 100%;
-    margin-bottom: 0.55rem;
+    position: absolute;
+    width: auto;
+    margin-bottom: 0;
+    top: 0.55rem;
+    right: 0.65rem;
     justify-content: flex-end;
   }
 
