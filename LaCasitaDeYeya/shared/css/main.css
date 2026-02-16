@@ -774,6 +774,8 @@ body.menu-view .menu-book-controls-bottom {
 
 .menu-cover-center {
   gap: 0;
+  justify-content: flex-start;
+  padding-top: clamp(0.25rem, 1.2vh, 0.8rem);
 }
 
 .menu-cover-logo {
@@ -782,17 +784,18 @@ body.menu-view .menu-book-controls-bottom {
 }
 
 .menu-cover-food {
-  margin-top: 0.1rem;
+  margin-top: -0.22rem;
   font-family: "Barlow Condensed", sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: #aa1f2b;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
+  line-height: 1;
 }
 
 .menu-cover-title {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.1rem;
   font-family: "Amatic SC", cursive;
   font-size: clamp(4rem, 9vw, 7rem);
   color: #153f89;

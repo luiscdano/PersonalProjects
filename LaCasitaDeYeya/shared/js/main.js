@@ -139,7 +139,15 @@ function initMenuBook() {
 
   function render() {
     pages.forEach((page, index) => {
-      page.classList.toggle('is-active', index === currentIndex);
+      const isActive = index === currentIndex;
+      page.classList.toggle('is-active', isActive);
+
+      if (isActive) {
+        const pageBody = page.querySelector('.menu-page-body');
+        if (pageBody) {
+          pageBody.scrollTop = 0;
+        }
+      }
     });
 
     currentIndicators.forEach((indicator) => {
