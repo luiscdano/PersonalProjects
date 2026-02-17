@@ -791,6 +791,15 @@ body.menu-view .menu-book-controls-bottom {
   filter: drop-shadow(0 18px 28px rgba(8, 32, 119, 0.24));
 }
 
+.menu-cover-title {
+  margin: 0 0 0.1rem;
+  font-family: "Amatic SC", cursive;
+  font-size: clamp(4.2rem, 9.4vw, 7.3rem);
+  color: #153f89;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
+
 .menu-back-logo {
   width: min(160px, 34%);
   margin-bottom: 0.5rem;
@@ -1071,5 +1080,9 @@ body.menu-view .menu-book-controls-bottom {
 
   .menu-cover-logo {
     margin-bottom: 0.2rem;
+  }
+
+  .menu-cover-title {
+    margin-top: 1.4rem;
   }
 }
