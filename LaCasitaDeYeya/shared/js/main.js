@@ -1,6 +1,6 @@
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const mainNav = document.querySelector('#main-nav');
-const FALLBACK_INSTAGRAM_IMAGE = 'shared/img/logo.png';
+const FALLBACK_INSTAGRAM_IMAGE = 'shared/img/logo.png?v=20260217';
 
 function initMobileMenu() {
   if (!menuToggle || !mainNav) return;
