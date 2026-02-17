@@ -543,6 +543,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  margin-right: clamp(0.45rem, 1.2vw, 1.2rem);
   color: #f2f6ff;
   font-weight: 700;
   white-space: nowrap;
@@ -568,8 +569,8 @@ p {
 }
 
 .footer-cmlayer-logo {
-  width: 38px;
-  height: 38px;
+  width: 57px;
+  height: 57px;
   display: inline-block;
   border-radius: 6px;
   background: url("../img/B01.png?v=20260217") center / contain no-repeat;
@@ -1139,6 +1140,7 @@ body.menu-view .menu-book-controls-bottom {
   .footer-center {
     grid-column: auto;
     justify-self: center;
+    margin-right: 0;
   }
 
   .grid,
