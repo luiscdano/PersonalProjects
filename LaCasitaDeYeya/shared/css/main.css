@@ -29,6 +29,9 @@ body {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
   color: var(--ink-900);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background:
     radial-gradient(circle at 12% 8%, rgba(15, 86, 174, 0.17), transparent 33%),
     radial-gradient(circle at 88% 92%, rgba(166, 122, 60, 0.2), transparent 36%),
@@ -220,6 +223,7 @@ body.menu-view .topbar {
 }
 
 main {
+  flex: 1;
   padding: 2rem 0 4rem;
 }
 
@@ -336,6 +340,59 @@ p {
 .section-block > p {
   max-width: 76ch;
   text-shadow: 0 6px 16px rgba(8, 32, 119, 0.08);
+}
+
+.locality-detail {
+  margin-top: clamp(1.1rem, 2.2vw, 2rem);
+}
+
+.locality-hero {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.15rem, 2.6vw, 2.3rem);
+  margin-bottom: clamp(0.85rem, 1.8vw, 1.4rem);
+}
+
+.locality-detail-right .locality-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(290px, 0.9fr);
+}
+
+.locality-hero-copy h1 {
+  margin: 0 0 0.55rem;
+}
+
+.locality-hero-copy > p {
+  max-width: 34ch;
+  text-shadow: 0 6px 16px rgba(8, 32, 119, 0.08);
+}
+
+.locality-hero-media {
+  margin: 0;
+}
+
+.locality-hero-media img {
+  width: min(500px, 100%);
+  margin: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 22px 44px rgba(8, 32, 119, 0.24);
+}
+
+.locality-detail-left .locality-hero-media img {
+  transform: translateX(clamp(-2.6rem, -3.3vw, -1.1rem));
+}
+
+.locality-detail-right .locality-hero-media {
+  justify-self: end;
+}
+
+.locality-detail-right .locality-hero-media img {
+  transform: translateX(clamp(1.1rem, 3.3vw, 2.6rem));
+}
+
+.locality-detail .grid {
+  margin-top: 1.1rem;
 }
 
 .instagram-section {
@@ -1041,6 +1098,28 @@ body.menu-view .menu-book-controls-bottom {
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .locality-hero,
+  .locality-detail-right .locality-hero {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+  }
+
+  .locality-hero-copy > p {
+    max-width: 100%;
+  }
+
+  .locality-hero-media,
+  .locality-detail-right .locality-hero-media {
+    justify-self: start;
+  }
+
+  .locality-hero-media img,
+  .locality-detail-left .locality-hero-media img,
+  .locality-detail-right .locality-hero-media img {
+    width: min(560px, 100%);
+    transform: none;
   }
 
   .grid {
