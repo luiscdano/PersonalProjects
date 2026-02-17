@@ -27,7 +27,7 @@
 
 body {
   margin: 0;
-  font-family: "Amatic SC", cursive;
+  font-family: "Nunito Sans", sans-serif;
   color: var(--ink-900);
   background:
     radial-gradient(circle at 12% 8%, rgba(15, 86, 174, 0.17), transparent 33%),
@@ -92,7 +92,7 @@ a {
 }
 
 .brand strong {
-  font-family: "Amatic SC", cursive;
+  font-family: "Bree Serif", serif;
   font-size: 1.18rem;
   color: var(--red-700);
   text-shadow: 0 4px 10px rgba(8, 32, 119, 0.18);
@@ -240,7 +240,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: "Amatic SC", cursive;
+  font-family: "Bree Serif", serif;
   line-height: 1.1;
 }
 
@@ -628,7 +628,7 @@ body.menu-view .menu-book-controls-bottom {
   margin: 0;
   min-width: 90px;
   text-align: center;
-  font-family: "Amatic SC", cursive;
+  font-family: "Barlow Condensed", sans-serif;
   font-size: 1.08rem;
   font-weight: 700;
   color: var(--azul-oscuro);
@@ -807,7 +807,7 @@ body.menu-view .menu-book-controls-bottom {
 
 .menu-back-center p {
   margin: 0;
-  font-family: "Amatic SC", cursive;
+  font-family: "Barlow Condensed", sans-serif;
   color: #1a3262;
   font-weight: 600;
   font-size: 1.05rem;
