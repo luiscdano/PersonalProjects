@@ -504,9 +504,9 @@ p {
 }
 
 .site-footer {
-  padding: 1.12rem 0;
+  padding: 0.68rem 0;
   background: linear-gradient(120deg, rgba(8, 32, 119, 0.95), rgba(15, 86, 174, 0.95));
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 0;
   color: #f2f6ff;
 }
 
